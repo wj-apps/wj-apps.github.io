@@ -1,2 +1,311 @@
-<h1>WJ Apps</h1>
-<a href="/app1">Home</a>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WJ Apps</title>
+  <style>
+    :root {
+      --bg: #0d0f14;
+      --surface: #1a1d24;
+      --card: #22262f;
+      --primary: #5b9cf6;
+      --text: #e8eaf0;
+      --text-sub: #8a8fa8;
+      --border: #2e3240;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      line-height: 1.6;
+    }
+
+    a { color: var(--primary); text-decoration: none; }
+    a:hover { opacity: 0.8; }
+
+    /* ── Header ── */
+    header {
+      text-align: center;
+      padding: 64px 24px 48px;
+      border-bottom: 1px solid var(--border);
+    }
+    header h1 {
+      font-size: 2.4rem;
+      font-weight: 800;
+      letter-spacing: 2px;
+      color: var(--primary);
+    }
+    header p {
+      margin-top: 8px;
+      color: var(--text-sub);
+      font-size: 1rem;
+    }
+
+    /* ── Section ── */
+    section {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 56px 24px;
+    }
+    section h2 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: var(--text-sub);
+      text-transform: uppercase;
+      margin-bottom: 28px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    /* ── App Grid ── */
+    .app-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .app-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 24px;
+      transition: transform 0.15s;
+    }
+    .app-card:hover { transform: translateY(-2px); }
+
+    .app-card-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 14px;
+    }
+    .app-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 14px;
+      background: var(--surface);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      flex-shrink: 0;
+      overflow: hidden;
+    }
+    .app-icon img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .app-name {
+      font-size: 1.05rem;
+      font-weight: 700;
+    }
+    .app-tag {
+      font-size: 0.75rem;
+      color: var(--text-sub);
+      margin-top: 2px;
+    }
+    .app-desc {
+      font-size: 0.88rem;
+      color: var(--text-sub);
+      margin-bottom: 18px;
+    }
+    .store-badges {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .badge {
+      display: inline-block;
+      padding: 7px 14px;
+      border-radius: 8px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text);
+      transition: background 0.15s;
+    }
+    .badge:hover { background: var(--border); }
+    .badge.primary {
+      background: var(--primary);
+      color: #fff;
+      border-color: var(--primary);
+    }
+
+    /* ── Support ── */
+    .support-box {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 32px;
+    }
+    .support-box p {
+      color: var(--text-sub);
+      margin-bottom: 20px;
+    }
+    .support-box a {
+      display: inline-block;
+      padding: 10px 24px;
+      background: var(--primary);
+      color: #fff;
+      border-radius: 8px;
+      font-weight: 600;
+    }
+
+    /* ── Privacy ── */
+    .privacy-content h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      margin: 28px 0 8px;
+      color: var(--text);
+    }
+    .privacy-content p, .privacy-content li {
+      font-size: 0.9rem;
+      color: var(--text-sub);
+      margin-bottom: 6px;
+    }
+    .privacy-content ul {
+      padding-left: 20px;
+    }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center;
+      padding: 32px 24px;
+      border-top: 1px solid var(--border);
+      color: var(--text-sub);
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 480px) {
+      header h1 { font-size: 1.8rem; }
+      .app-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Header -->
+<header>
+  <h1>WJ APPS</h1>
+  <p>Simple apps for everyday life</p>
+</header>
+
+<!-- Apps -->
+<section id="apps">
+  <h2>Apps</h2>
+  <div class="app-grid">
+
+    <div class="app-card">
+      <div class="app-card-header">
+        <div class="app-icon">📈</div>
+        <div>
+          <div class="app-name">Stock Battle</div>
+          <div class="app-tag">주식 시뮬레이션 게임</div>
+        </div>
+      </div>
+      <p class="app-desc">30일간 AI 투자자들과 경쟁하는 주식 시뮬레이션 게임. 실제 돈 없이 투자 감각을 키워보세요.</p>
+      <div class="store-badges">
+        <a class="badge primary" href="https://apps.apple.com/us/app/stock-battle/id6762134847" target="_blank">App Store</a>
+        <a class="badge" href="https://play.google.com/store/apps/details?id=com.wj.stocksimulation" target="_blank">Google Play</a>
+      </div>
+    </div>
+
+    <div class="app-card">
+      <div class="app-card-header">
+        <div class="app-icon">📊</div>
+        <div>
+          <div class="app-name">Scale Trading</div>
+          <div class="app-tag">투자 계산기</div>
+        </div>
+      </div>
+      <p class="app-desc">분할매수 전략을 손쉽게 계산하고 관리하는 투자 도구.</p>
+      <div class="store-badges">
+        <a class="badge primary" href="https://play.google.com/store/apps/details?id=com.wonjin.scaleTrading" target="_blank">Google Play</a>
+      </div>
+    </div>
+
+    <div class="app-card">
+      <div class="app-card-header">
+        <div class="app-icon">🃏</div>
+        <div>
+          <div class="app-name">My Pokémon Card</div>
+          <div class="app-tag">포켓몬 카드 관리</div>
+        </div>
+      </div>
+      <p class="app-desc">나만의 포켓몬 카드 컬렉션을 기록하고 관리하세요.</p>
+      <div class="store-badges">
+        <a class="badge primary" href="https://play.google.com/store/apps/details?id=com.wj.myPokemoncard" target="_blank">Google Play</a>
+      </div>
+    </div>
+
+    <div class="app-card">
+      <div class="app-card-header">
+        <div class="app-icon">🎮</div>
+        <div>
+          <div class="app-name">Brawl Creator</div>
+          <div class="app-tag">브롤스타즈 커뮤니티</div>
+        </div>
+      </div>
+      <p class="app-desc">브롤스타즈 팬을 위한 콘텐츠 제작 및 공유 앱.</p>
+      <div class="store-badges">
+        <a class="badge primary" href="https://play.google.com/store/apps/details?id=com.wj.brawlCreator" target="_blank">Google Play</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Support -->
+<section id="support" style="padding-top: 0;">
+  <h2>Support</h2>
+  <div class="support-box">
+    <p>앱 사용 중 문제가 발생하거나 문의 사항이 있으시면 이메일로 연락해 주세요. 빠르게 답변 드리겠습니다.</p>
+    <a href="mailto:wonjin911@gmail.com">wonjin911@gmail.com</a>
+  </div>
+</section>
+
+<!-- Privacy Policy -->
+<section id="privacy" style="padding-top: 0;">
+  <h2>Privacy Policy</h2>
+  <div class="privacy-content">
+    <p>WJ Apps의 모든 앱은 사용자의 개인정보를 소중히 여깁니다. 본 개인정보처리방침은 WJ Apps가 제공하는 모든 앱에 적용됩니다.</p>
+
+    <h3>수집하는 정보</h3>
+    <ul>
+      <li>앱 사용 통계 및 분석 데이터 (Firebase Analytics — 익명 처리)</li>
+      <li>광고 식별자 (Google AdMob — 광고 제공 목적)</li>
+      <li>앱 내 저장 데이터는 기기 로컬에만 저장되며 외부로 전송되지 않습니다</li>
+    </ul>
+
+    <h3>수집하지 않는 정보</h3>
+    <ul>
+      <li>이름, 이메일, 전화번호 등 개인 식별 정보</li>
+      <li>위치 정보</li>
+      <li>카메라, 마이크 등 민감한 기기 권한</li>
+    </ul>
+
+    <h3>제3자 서비스</h3>
+    <ul>
+      <li><a href="https://policies.google.com/privacy" target="_blank">Google Firebase Analytics</a></li>
+      <li><a href="https://policies.google.com/privacy" target="_blank">Google AdMob</a></li>
+    </ul>
+
+    <h3>문의</h3>
+    <p>개인정보처리방침에 관한 문의: <a href="mailto:wonjin911@gmail.com">wonjin911@gmail.com</a></p>
+
+    <p style="margin-top: 20px;">최종 업데이트: 2026년 4월</p>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 WJ Apps · <a href="mailto:wonjin911@gmail.com">wonjin911@gmail.com</a></p>
+</footer>
+
+</body>
+</html>

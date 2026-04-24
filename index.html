@@ -116,7 +116,7 @@
     .store-badges {
       display: flex;
       flex-direction: column;
-      gap: 8px;
+      gap: 6px;
     }
     .store-badges a {
       display: block;
@@ -124,11 +124,13 @@
     }
     .badge-appstore img {
       height: 40px;
+      display: block;
     }
     .badge-googleplay img {
-      height: 40px;
-      /* Google Play badge has extra padding built in — compensate */
-      margin-left: -8px;
+      /* Google Play PNG has ~18% built-in padding top/bottom */
+      height: 60px;
+      margin: -10px 0 -10px -12px;
+      display: block;
     }
 
     /* ── Support ── */
@@ -221,6 +223,9 @@
       </div>
       <p class="app-desc">분할매수 전략을 손쉽게 계산하고 관리하는 투자 도구.</p>
       <div class="store-badges">
+        <a class="badge-appstore" href="https://apps.apple.com/us/app/stock-average-calculator/id1558941687" target="_blank">
+          <img src="https://developer.apple.com/app-store/marketing/guidelines/images/badge-download-on-the-app-store.svg" alt="Download on the App Store" />
+        </a>
         <a class="badge-googleplay" href="https://play.google.com/store/apps/details?id=com.wonjin.scaleTrading" target="_blank">
           <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" />
         </a>
